@@ -1,5 +1,5 @@
-import User from "../models/User";
-import router from "../routes/auth";
+import User from "../models/User.js";
+import router from "../routes/auth.js";
 
 // Read
 export const getUser = async (req, res) => {
