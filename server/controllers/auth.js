@@ -42,9 +42,10 @@ export const register = async (req, res) => {
 // Logging In
 
 export const login = async (req, res) => {
-    try{
-        const {email, passowrd} = req.body;
+    try {
+        const {email, password} = req.body;
         const user = await User.findOne({email: email });
+        console.log(`${user} logged in`);
         if(!user) return res.status(400).json({msg: "User does not exists. "});
         
         const isMatch = await bcrypt.compare(password, user.password);
@@ -53,7 +54,7 @@ export const login = async (req, res) => {
         const token = jwt.sign({id: user._id}, process.env.JWT_SECRET);
         delete user.password;
         res.status(200).json({token, user});
-    } catch(err) {
+    } catch (err) {
         res.status(500).json({error: err.message})
     }
 }

@@ -1,5 +1,4 @@
 import User from "../models/User.js";
-import router from "../routes/auth.js";
 
 // Read
 export const getUser = async (req, res) => {
@@ -44,7 +43,7 @@ export const addRemoveFriend = async (req, res) => {
             friend.friends = friend.friends.filter((id) => id !== id);
         } else {
             user.friends.push(friendId);
-            friend.friends(id);
+            friend.friends.push(id);
         }
         await user.save();
         await friend.save(); 

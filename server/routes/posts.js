@@ -1,15 +1,15 @@
-// import expess from "express";
-// import { getFeedPosts, getUserPosts, likePost } from "../controllers/posts.js";
-// import { verifyToken } from "../middleware/auth.js";
+import expess from "express";
+import { getFeedPosts, getUserPosts, likePost } from "../controllers/posts.js";
+import { verifyToken } from "../middleware/auth.js";
 
-// const router = expess.Router();
+const router = expess.Router();
 
-// // Read
-// router.get("/", verifyToken, getFeedPosts);
-// router.get(":userId/posts", verifyToken, getUserPosts);
+// Read
+router.get("/", verifyToken, getFeedPosts);
+router.get(":userId/posts", verifyToken, getUserPosts);
 
-// // Update
-// router.patch("/:id/like", verifyToken, likePost);
+// Update
+router.patch("/:id/like", verifyToken, likePost);
 
-// export default router;
+export default router;
 
