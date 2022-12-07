@@ -8,7 +8,7 @@ import {
     useTheme,
 } from "@mui/material";
 import EditOutlinedIcon  from "@mui/icons-material/EditOutlined";
-import { Formik} from "formik";
+import { Formik } from "formik";
 import * as yup from "yup";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
@@ -79,6 +79,7 @@ const Form = () => {
     };
 
     const login = async (values, onSubmitProps) => {
+        console.log(values);
         const loggedInResponse = await fetch(
             "http://localhost:3001/auth/login",
             {
@@ -260,8 +261,8 @@ return (
                         }}
                         >
                             { isLogin
-                             ? "Don't Habe an account? Sign Up here." 
-                             : "Already have and account? Login Here." }    
+                             ? "Don't Have an Account? Sign Up Here." 
+                             : "Already Have and Account? Login Here." }    
                         </Typography>
                     </Box>
                 </form>
