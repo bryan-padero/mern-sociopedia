@@ -14,6 +14,9 @@ const AdvertWidget = () => {
                 <Typography color={dark} variant="h5" fontWeight="500">
                     Sponsored
                 </Typography>
+                <Typography>
+                    Create Ad
+                </Typography>
             </FlexBetween>
             <img 
                 width="100%"
