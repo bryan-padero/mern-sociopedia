@@ -262,7 +262,7 @@ return (
                         >
                             { isLogin
                              ? "Don't Have an Account? Sign Up Here." 
-                             : "Already Have and Account? Login Here." }    
+                             : "Already Have an Account? Login Here." }    
                         </Typography>
                     </Box>
                 </form>
